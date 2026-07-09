@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guía visual — SolNatura</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --ink:#141414; --muted:#7A7A7A; --cream:#F4EDED; }
+  *{box-sizing:border-box}
+  body{font-family:'Roboto',sans-serif;color:var(--ink);margin:0;padding:40px;max-width:960px;margin:0 auto;background:#fff}
+  h1,h2,h3{font-family:'Roboto Slab',serif}
+  h1{font-size:2.4rem;margin:0 0 4px}
+  .sub{color:var(--muted);margin:0 0 32px}
+  h2{font-size:1.4rem;border-bottom:2px solid var(--cream);padding-bottom:8px;margin-top:48px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:16px}
+  .sw{border-radius:12px;overflow:hidden;border:1px solid #eee}
+  .chip{height:88px}
+  .meta{padding:8px 10px;font-size:.8rem}
+  .meta b{display:block;font-size:.85rem}
+  .meta code{color:var(--muted);font-size:.75rem}
+  .type-demo{background:var(--cream);border-radius:12px;padding:24px;margin-top:16px}
+  .type-demo .t1{font-family:'Roboto Slab',serif;font-size:2rem;margin:0}
+  .type-demo .t2{font-family:'Roboto Slab',serif;font-size:1.3rem;margin:14px 0 4px}
+  .type-demo p{margin:6px 0 0;line-height:1.6;color:#333}
+  .note{font-size:.85rem;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+  <h1>SolNatura</h1>
+  <p class="sub">Guía visual — extraída del sitio real solnatura.co · Roboto Slab + Roboto</p>
+
+  <h2>Colores de marca</h2>
+  <div class="grid" id="brand"></div>
+
+  <h2>Neutrales</h2>
+  <div class="grid" id="neutral"></div>
+
+  <h2>Tipografía</h2>
+  <div class="type-demo">
+    <p class="t1">Soluciones basadas en la Naturaleza</p>
+    <p class="t2">Diseñando SbN desde lo local</p>
+    <p>Este es el texto de cuerpo en Roboto regular. SolNatura acompaña la implementación de
+    soluciones basadas en la naturaleza para territorios más resilientes, biodiversos y bajos en carbono.</p>
+    <p class="note">Títulos: Roboto Slab (serif) · Cuerpo: Roboto (sans-serif)</p>
+  </div>
+
+<script>
+  const brand=[["Verde principal","#61CE70"],["Verde hoja","#6DBE6F"],["Verde bosque","#377E4C"],
+    ["Verde salvia","#5BA969"],["Naranja vivo","#FF5900"],["Terracota","#E16E45"],
+    ["Amarillo sol","#FFB700"],["Rosa suave","#F9CCCA"],["Teal","#6CC9D5"],["Teal apagado","#6CA1AD"]];
+  const neutral=[["Tinta","#141414"],["Gris texto","#7A7A7A"],["Gris medio","#B9B9B9"],
+    ["Gris claro","#D8D8D8"],["Crema","#F4EDED"],["Blanco","#FFFFFF"]];
+  const render=(arr,id)=>document.getElementById(id).innerHTML=arr.map(([n,h])=>
+    `<div class="sw"><div class="chip" style="background:${h}"></div>
+     <div class="meta"><b>${n}</b><code>${h}</code></div></div>`).join("");
+  render(brand,"brand");render(neutral,"neutral");
+</script>
+</body>
+</html>

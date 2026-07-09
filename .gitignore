@@ -1,0 +1,7 @@
+.claude/
+.playwright-mcp/
+**/.map.txt
+**/.mapc.txt
+**/.a.txt
+Thumbs.db
+.DS_Store
