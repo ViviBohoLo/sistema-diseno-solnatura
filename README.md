@@ -22,16 +22,19 @@ estilo de la marca al crear páginas complementarias.
 │
 └── clon-solnatura/                # Clones fieles de páginas (HTML+CSS+imágenes offline)
     ├── LEEME-CLON.md               # Cómo usar los clones + anatomía de secciones
-    ├── que-son-soluciones-sbn/     # Clon 1: "¿Qué son soluciones SbN?"
-    │   ├── index.html              #   → la página (fuente de verdad)
-    │   └── assets/                 #   → 102 archivos (CSS, imágenes, SVG, fuentes, JS)
-    ├── elementos-claves-sbn/       # Clon 2: "Elementos clave para implementación de SbN"
-    │   ├── index.html
-    │   └── assets/                 #   → 113 archivos
+    ├── home/                       # Clon: Inicio (hero + mapa + 5 tarjetas de navegación)
+    ├── que-son-soluciones-sbn/     # Clon: "¿Qué son soluciones SbN?" (olas rosadas, ~30 tarjetas)
+    ├── elementos-claves-sbn/       # Clon: "Elementos clave" (sol naranja, mapas, tarjetas 01-04)
+    ├── estructura-del-fondo/       # Clon: "Estructura del fondo SolNatura"
+    ├── fondo-capital-privado/      # Clon: "Fondo de capital privado"
+    ├── que-es-cluster/             # Clon: "Qué es un clúster para promover SbN"
+    │   └── (cada carpeta: index.html + assets/ con CSS, imágenes, SVG, fuentes, JS)
     ├── _referencia-visual/         # Capturas renderizadas (prueba de fidelidad)
     └── _herramientas/
         └── clonar-pagina.sh        # Script para clonar otras páginas del sitio
 ```
+
+**6 páginas clonadas**, todas verificadas renderizándolas (0 errores, idénticas al sitio real).
 
 ---
 
@@ -51,14 +54,20 @@ Detalle completo en [`sistema-diseno-solnatura/SISTEMA-DE-DISENO.md`](sistema-di
 1. Dale acceso a este repositorio completo.
 2. Indícale que la **fuente de verdad** del diseño son los `index.html` dentro de `clon-solnatura/`
    y el manual `SISTEMA-DE-DISENO.md`.
-3. Prompt sugerido:
+3. Prompt sugerido (versión "copia, no reinterpretes"):
 
-> Analiza el código real de estas páginas de SolNatura (los `index.html` y sus `assets/`).
-> Es la fuente de verdad del diseño de la marca. Crea una NUEVA subpágina para _[tu tema]_ que
-> use EXACTAMENTE el mismo sistema visual: los mismos colores, las fuentes Roboto Slab (títulos)
-> y Roboto (cuerpo), las mismas **olas onduladas** (shape dividers) entre secciones, el mismo
-> estilo de **tarjetas** (ícono + título verde + texto), el mismo header y el mismo footer con
-> los logos de aliados. **No inventes cuadros ni elementos que no aparezcan en este código.**
+> Estas 6 páginas (`clon-solnatura/*/index.html` con sus `assets/`) son el código REAL del
+> sitio SolNatura. **No las rediseñes ni las interpretes: reutilízalas.**
+>
+> Para crear la nueva subpágina de _[tu tema]_:
+> 1. Toma como base la página clonada más parecida a lo que necesito (dime cuál si dudas).
+> 2. **Copia su estructura tal cual**: el mismo `<header>`, el mismo `<footer>`, los mismos
+>    contenedores, las mismas **olas onduladas** (shape dividers SVG), las mismas clases CSS.
+> 3. Cambia ÚNICAMENTE los textos y las imágenes por los de mi tema. Conserva colores,
+>    tipografías (Roboto Slab títulos / Roboto cuerpo), espaciados y tarjetas exactamente igual.
+> 4. **Prohibido inventar** cuadros, bordes, sombras o elementos que no existan en estos clones.
+>
+> Si un componente que necesito no está en ninguna página, dímelo antes de inventarlo.
 
 ---
 
