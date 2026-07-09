@@ -22,6 +22,10 @@ estilo de la marca al crear páginas complementarias.
 │
 └── clon-solnatura/                # Clones fieles de páginas (HTML+CSS+imágenes offline)
     ├── LEEME-CLON.md               # Cómo usar los clones + anatomía de secciones
+    ├── pagina-muestra/             # ⭐ PLANTILLA de ejemplo: subpágina nueva con el diseño SolNatura
+    │   ├── index.html              #    (un solo archivo, CSS incluido — fácil de copiar y adaptar)
+    │   ├── LEEME.md                #    cómo usarla como plantilla
+    │   └── assets/                 #    logo, íconos e imágenes reales de marca
     ├── home/                       # Clon: Inicio (hero + mapa + 5 tarjetas de navegación)
     ├── que-son-soluciones-sbn/     # Clon: "¿Qué son soluciones SbN?" (olas rosadas, ~30 tarjetas)
     ├── elementos-claves-sbn/       # Clon: "Elementos clave" (sol naranja, mapas, tarjetas 01-04)
@@ -48,6 +52,16 @@ naranja `#FF5900` · terracota `#E16E45` · amarillo sol `#FFB700` · rosa `#F9C
 Detalle completo en [`sistema-diseno-solnatura/SISTEMA-DE-DISENO.md`](sistema-diseno-solnatura/SISTEMA-DE-DISENO.md).
 
 ---
+
+## ⭐ La forma más fácil: copiar la plantilla de muestra
+
+En `clon-solnatura/pagina-muestra/` hay una **subpágina de ejemplo ya construida** con el diseño
+de SolNatura (colores, fuentes, olas, tarjetas, header y footer reales). Es un solo `index.html`
+con el CSS adentro. En vez de pedirle a la herramienta que "interprete" el diseño, dile:
+
+> Usa `clon-solnatura/pagina-muestra/index.html` como plantilla. Conserva su estructura, colores,
+> tipografías, olas, tarjetas, header y footer. Cambia SOLO los textos y las imágenes por los de
+> _[mi tema]_. No agregues elementos que no estén en la plantilla.
 
 ## 🤖 Cómo usar esto con una herramienta de diseño
 

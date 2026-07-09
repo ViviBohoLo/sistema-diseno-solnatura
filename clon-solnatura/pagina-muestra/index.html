@@ -1,0 +1,271 @@
+<!doctype html>
+<!--
+  PÁGINA DE MUESTRA — Sistema de diseño SolNatura
+  Construida reutilizando los colores, tipografías, olas, logo e ilustraciones REALES
+  del sitio solnatura.co. Los TEXTOS e IMÁGENES son de ejemplo: reemplázalos por los tuyos.
+  El diseño (colores, fuentes, olas, tarjetas, header, footer) debe conservarse igual.
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encuentro Regional SbN — SolNatura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Paleta de marca SolNatura (valores exactos del sitio) */
+    --verde:#61CE70; --verde-hoja:#6DBE6F; --verde-bosque:#377E4C; --verde-salvia:#5BA969;
+    --naranja:#FF5900; --terracota:#E16E45; --amarillo:#FFB700; --rosa:#F9CCCA;
+    --teal:#6CC9D5; --teal-2:#6CA1AD;
+    --tinta:#141414; --gris:#7A7A7A; --crema:#F4EDED; --blanco:#FFFFFF;
+    --serif:'Roboto Slab',Georgia,serif; --sans:'Roboto',Arial,sans-serif;
+    --radio:18px; --contenedor:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--tinta);background:var(--blanco);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--serif);line-height:1.15;font-weight:600}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--contenedor);margin-inline:auto;padding-inline:28px}
+  .btn{display:inline-block;font-weight:600;font-size:.95rem;padding:12px 28px;border-radius:999px;border:2px solid currentColor;transition:.25s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-solido{background:var(--verde-bosque);color:#fff;border-color:var(--verde-bosque)}
+  .btn-solido:hover{background:var(--verde)}
+
+  /* ---------- HEADER (transparente sobre el hero) ---------- */
+  header{position:absolute;inset:0 0 auto 0;z-index:20}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:26px 0}
+  .nav .logo{height:52px;width:auto}
+  .nav ul{display:flex;gap:12px;list-style:none;align-items:center}
+  .nav .pill{color:#fff;border:2px solid rgba(255,255,255,.85);padding:9px 22px;border-radius:999px;font-weight:600;font-size:.85rem;letter-spacing:.02em;transition:.25s;white-space:nowrap}
+  .nav .pill:hover{background:#fff;color:var(--verde-bosque)}
+  .nav-right{display:flex;align-items:center;gap:30px}
+  .nav-links{display:flex;gap:26px;color:#fff;font-weight:500;font-size:.95rem}
+  .nav-links a{opacity:.92}.nav-links a:hover{opacity:1;text-decoration:underline}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:94vh;display:flex;align-items:center;color:#fff;overflow:hidden;padding-top:118px;padding-bottom:56px}
+  .hero::before{content:"";position:absolute;inset:0;background:url(assets/hero.jpg) center/cover;transform:scale(1.03)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(20,20,20,.72) 0%,rgba(20,20,20,.35) 45%,rgba(55,126,76,.25) 100%)}
+  .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;width:100%}
+  .hero .kicker{display:inline-block;background:var(--amarillo);color:var(--tinta);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:6px;margin-bottom:22px}
+  .hero h1{font-size:clamp(2.4rem,5vw,4rem);text-shadow:0 2px 20px rgba(0,0,0,.35)}
+  .hero p.lead{margin-top:20px;font-size:1.15rem;max-width:34ch;color:#f3f3f3}
+  .hero .acciones{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero .btn{color:#fff}
+  .hero .btn-amarillo{background:var(--amarillo);color:var(--tinta);border-color:var(--amarillo)}
+  .intro-card{background:rgba(20,20,20,.34);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.28);border-radius:22px;padding:30px 32px}
+  .intro-card b{color:var(--verde)}
+  /* entrada escalonada */
+  .fade{opacity:0;transform:translateY(22px);animation:up .8s forwards}
+  @keyframes up{to{opacity:1;transform:none}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.2s}.d3{animation-delay:.35s}.d4{animation-delay:.5s}
+
+  /* ---------- OLA divisoria (SVG) ---------- */
+  .ola{display:block;width:100%;height:90px;margin-bottom:-6px}
+  .ola.flip{transform:rotate(180deg)}
+
+  /* ---------- SECCIONES ---------- */
+  section.bloque{padding:72px 0}
+  .encabezado{max-width:720px;margin-bottom:42px}
+  .encabezado .tag{color:var(--verde-bosque);font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+  .encabezado h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-top:10px;color:var(--tinta)}
+  .encabezado p{margin-top:14px;color:var(--gris);font-size:1.08rem}
+
+  /* Tarjetas (ícono + título verde + texto) */
+  .tarjetas{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .tarjeta{background:#fff;border:1px solid #ececec;border-radius:var(--radio);padding:28px 24px;transition:.28s;position:relative}
+  .tarjeta:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(55,126,76,.12);border-color:transparent}
+  .ficha{width:62px;height:62px;border-radius:14px;display:grid;place-items:center;margin-bottom:20px}
+  .ficha i{display:block;width:34px;height:34px;background:#fff;-webkit-mask:var(--ic) center/contain no-repeat;mask:var(--ic) center/contain no-repeat}
+  .tarjeta h3{font-size:1.18rem;color:var(--verde-bosque);margin-bottom:10px}
+  .tarjeta p{color:var(--gris);font-size:.96rem}
+  .t-verde .ficha{background:var(--verde)} .t-teal .ficha{background:var(--teal)}
+  .t-naranja .ficha{background:var(--naranja)} .t-amarillo .ficha{background:var(--amarillo)}
+  .t-salvia .ficha{background:var(--verde-salvia)} .t-terracota .ficha{background:var(--terracota)}
+
+  /* Banda de color con datos */
+  .banda{background:var(--verde-bosque);color:#fff;text-align:center}
+  .banda .wrap{padding:64px 28px}
+  .banda h2{font-size:clamp(1.6rem,3vw,2.3rem);max-width:26ch;margin-inline:auto}
+  .datos{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:46px}
+  .dato .n{font-family:var(--serif);font-size:3rem;color:var(--amarillo);line-height:1}
+  .dato p{margin-top:8px;opacity:.9}
+
+  /* Territorios (tags) */
+  .territorios{background:var(--crema)}
+  .chips{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px}
+  .chip{background:#fff;border:2px solid var(--verde);color:var(--verde-bosque);font-weight:600;padding:10px 22px;border-radius:999px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--tinta);color:#cfcfcf;padding:56px 0 34px}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+  .foot-logo{height:56px;margin-bottom:16px}
+  footer p.desc{max-width:40ch;font-size:.92rem;color:#a9a9a9}
+  .aliados{margin-top:14px}
+  .aliados span{display:block;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#8a8a8a;margin-bottom:12px}
+  .aliados .logos{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:#fff;padding:16px 24px;border-radius:14px}
+  .aliados .logos img{height:42px;width:auto;object-fit:contain}
+  .foot-bottom{border-top:1px solid #2a2a2a;margin-top:40px;padding-top:20px;font-size:.82rem;color:#7a7a7a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:28px}
+    .nav-links{display:none}
+    .tarjetas{grid-template-columns:repeat(2,1fr)}
+    .datos{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){ .tarjetas{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO + HEADER ================= -->
+<div class="hero">
+  <header>
+    <div class="wrap nav">
+      <img class="logo" src="assets/logo-solnatura.svg" alt="SolNatura">
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#encuentro">El encuentro</a>
+          <a href="#agenda">Agenda</a>
+          <a href="#territorios">Territorios</a>
+        </div>
+        <a class="pill" href="#contacto">Inscríbete</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div>
+      <span class="kicker fade d1">Encuentro Regional · 2025</span>
+      <h1 class="fade d1">Soluciones basadas en la Naturaleza para territorios resilientes</h1>
+      <p class="lead fade d2">Un espacio para conectar comunidades, ciencia y financiamiento en torno a las SbN en Colombia.</p>
+      <div class="acciones fade d3">
+        <a class="btn btn-amarillo" href="#agenda">Ver la agenda</a>
+        <a class="btn" href="#contacto">Inscríbete</a>
+      </div>
+    </div>
+    <div class="intro-card fade d4">
+      <p><b>SolNatura</b> reúne a autoridades ambientales, academia, sector privado y comunidades locales para impulsar modelos sostenibles de desarrollo territorial, bajos en carbono y biodiversos, que aporten al cumplimiento de las metas climáticas colombianas.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Ola divisoria rosada (hero -> contenido) -->
+<svg class="ola" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#F9CCCA" d="M0,40 C240,90 480,0 720,30 C960,60 1200,95 1440,45 L1440,90 L0,90 Z"></path>
+</svg>
+
+<!-- ================= EL ENCUENTRO ================= -->
+<section class="bloque" id="encuentro" style="background:var(--rosa)">
+  <div class="wrap">
+    <div class="encabezado">
+      <span class="tag">El encuentro</span>
+      <h2>Un punto de encuentro para las SbN del país</h2>
+      <p>Durante dos días compartiremos experiencias que inspiran, conoceremos los avances de los clústeres de innovación y exploraremos cómo hacer financiables las soluciones basadas en la naturaleza.</p>
+    </div>
+    <a class="btn btn-solido" href="#agenda">Conoce el programa</a>
+  </div>
+</section>
+
+<!-- ================= AGENDA / TARJETAS ================= -->
+<section class="bloque" id="agenda">
+  <div class="wrap">
+    <div class="encabezado">
+      <span class="tag">¿Qué haremos?</span>
+      <h2>Cuatro ejes de trabajo</h2>
+      <p>Cada eje reúne conversatorios, talleres y espacios de articulación entre los actores del territorio.</p>
+    </div>
+    <div class="tarjetas">
+      <div class="tarjeta t-verde">
+        <div class="ficha" style="--ic:url(assets/icon-tree.svg)"><i></i></div>
+        <h3>Diseñar desde lo local</h3>
+        <p>Portafolios de SbN construidos con clústeres de innovación e investigación en cada región.</p>
+      </div>
+      <div class="tarjeta t-teal">
+        <div class="ficha" style="--ic:url(assets/icon-hand.svg)"><i></i></div>
+        <h3>Financiar la naturaleza</h3>
+        <p>Instrumentos financieros que movilizan recursos públicos y privados hacia las SbN.</p>
+      </div>
+      <div class="tarjeta t-naranja">
+        <div class="ficha" style="--ic:url(assets/icon-sol.svg)"><i></i></div>
+        <h3>Implementar en territorio</h3>
+        <p>Organizaciones locales que llevan las soluciones a la práctica con enfoque de género.</p>
+      </div>
+      <div class="tarjeta t-amarillo">
+        <div class="ficha" style="--ic:url(assets/icon-colibri.svg)"><i></i></div>
+        <h3>Monitorear y aprender</h3>
+        <p>Sistemas de monitoreo, reporte y verificación que fortalecen las condiciones para las SbN.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ola divisoria (contenido -> banda) -->
+<svg class="ola flip" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#377E4C" d="M0,40 C240,90 480,0 720,30 C960,60 1200,95 1440,45 L1440,90 L0,90 Z"></path>
+</svg>
+
+<!-- ================= BANDA CON DATOS ================= -->
+<section class="banda">
+  <div class="wrap">
+    <h2>SolNatura acompañará a 24 iniciativas que transforman sus territorios</h2>
+    <div class="datos">
+      <div class="dato"><div class="n fade d1">24</div><p>proyectos con enfoque SbN</p></div>
+      <div class="dato"><div class="n fade d2">3</div><p>departamentos: Córdoba, Huila y Santander</p></div>
+      <div class="dato"><div class="n fade d3">+100</div><p>actores clave articulados</p></div>
+    </div>
+  </div>
+</section>
+<svg class="ola" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="#377E4C" d="M0,50 C240,0 480,95 720,55 C960,15 1200,5 1440,50 L1440,0 L0,0 Z"></path>
+</svg>
+
+<!-- ================= TERRITORIOS ================= -->
+<section class="bloque territorios" id="territorios">
+  <div class="wrap">
+    <div class="encabezado">
+      <span class="tag">Territorios</span>
+      <h2>Donde suceden las SbN</h2>
+      <p>El encuentro conecta las experiencias de tres territorios priorizados por SolNatura.</p>
+    </div>
+    <div class="chips">
+      <span class="chip">Córdoba</span>
+      <span class="chip">Huila</span>
+      <span class="chip">Santander</span>
+      <span class="chip">Clúster de innovación</span>
+      <span class="chip">Comunidades locales</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contacto">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <img class="foot-logo" src="assets/logo-solnatura.svg" alt="SolNatura">
+        <p class="desc">Promoviendo Soluciones basadas en la Naturaleza para un desarrollo territorial resiliente al clima, bajo en carbono y biodiverso.</p>
+      </div>
+      <div class="aliados">
+        <span>Por encargo de · Implementado por</span>
+        <div class="logos">
+          <img src="assets/aliado-iki.png" alt="IKI">
+          <img src="assets/aliado-giz.png" alt="GIZ">
+          <img src="assets/aliado-fondoaccion.png" alt="Fondo Acción">
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2025 SolNatura · Página de muestra (reemplaza textos e imágenes)</span>
+      <span>Roboto Slab · Roboto — Sistema de diseño SolNatura</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
